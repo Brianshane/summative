@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f7f2">
+    <meta
+      name="description"
+      content="Look up definitions, pronunciation, examples, and synonyms with Wordly Dictionary."
+    >
+    <title>Dictionary | Wordly</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Wordly Dictionary home">
+          <span class="brand-mark" aria-hidden="true">W</span>
+          <span>wordly<span class="brand-dot">.</span></span>
+        </a>
+        <div class="topbar-actions">
+          <span class="edition-label">YOUR POCKET DICTIONARY</span>
+          <button
+            class="icon-button theme-toggle"
+            id="theme-toggle"
+            type="button"
+            aria-label="Switch to dark theme"
+            title="Toggle color theme"
+          >
+            <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+            </svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.9 13A8.5 8.5 0 0 1 11 3.1 8.5 8.5 0 1 0 20.9 13Z"></path>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="page-title">
+          <div class="eyebrow"><span></span> WORDS OPEN WORLDS</div>
+          <h1 id="page-title">Find the words<br>that <em>move you.</em></h1>
+          <p class="hero-copy">A little curiosity goes a long way. What would you like to discover?</p>
+
+          <form class="search-form" id="search-form" role="search">
+            <label class="visually-hidden" for="word-input">Search for a word</label>
+            <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="10.8" cy="10.8" r="6.8"></circle>
+              <path d="m16 16 4.5 4.5"></path>
+            </svg>
+            <input
+              id="word-input"
+              name="word"
+              type="search"
+              placeholder="Enter a word to look up..."
+              autocomplete="off"
+              spellcheck="false"
+              required
+            >
+            <button class="search-button" type="submit">
+              <span>Search</span>
+              <span aria-hidden="true">↗</span>
+            </button>
+          </form>
+          <p class="search-hint">Press <kbd>Enter</kbd> to search</p>
+        </section>
+
+        <section class="content-section" aria-label="Dictionary results">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker" id="results-kicker">A DAILY DISCOVERY</p>
+              <h2 id="results-heading">A word to get you started</h2>
+            </div>
+            <span class="result-count" id="result-count" hidden></span>
+          </div>
+
+          <div id="status-message" class="status-message" role="status" aria-live="polite" hidden></div>
+          <div id="results" class="results"></div>
+          <div id="empty-state" class="empty-state">
+            <span class="empty-symbol" aria-hidden="true">✳</span>
+            <p>Your next favorite word is just a search away.</p>
+          </div>
+        </section>
+
+        <aside class="favorites-section" aria-labelledby="favorites-title">
+          <div class="favorites-heading">
+            <div>
+              <p class="section-kicker">KEEP THE GOOD ONES</p>
+              <h2 id="favorites-title">Your saved words <span class="favorite-count" id="favorite-count">0</span></h2>
+            </div>
+            <span class="favorites-note">Stored on this device</span>
+          </div>
+          <div class="favorites-list" id="favorites-list">
+            <p class="favorites-empty" id="favorites-empty">Words you save will find a home here.</p>
+          </div>
+        </aside>
+      </main>
+
+      <footer class="footer">
+        <span>Made for the love of language.</span>
+        <span>Definitions powered by <a href="https://dictionaryapi.dev/" target="_blank" rel="noreferrer">Free Dictionary API</a></span>
+      </footer>
+    </div>
+  </body>
+</html>
